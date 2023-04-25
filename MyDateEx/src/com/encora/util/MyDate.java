@@ -9,7 +9,6 @@ public class MyDate {
 		this.day=day;
 		this.month=month;
 		this.year=year;
-				
 		
 		if(month>12)
 			this.month=12;
@@ -39,19 +38,9 @@ public class MyDate {
 			this.day=30;
 		else if(day<1)
 			this.day=1;
-	   
-				
-					
-			
-		
-		
-		
+	  		
 	}
-	
 	public String toString() {
 		return day + "-" + month + "-"+ year;
-		
 	}
-	
-
 }
