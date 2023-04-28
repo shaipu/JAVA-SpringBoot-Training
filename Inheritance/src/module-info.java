@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author shaileshp
- *
- */
-module Inheritance {
-}
