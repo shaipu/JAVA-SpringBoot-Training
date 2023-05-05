@@ -1,88 +1,62 @@
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 public class ActionHandler implements ActionListener {
+	
+	 MyFrame mf;
 
-	private TextField firstTf;
-	private TextField SecondTf;
-
-
-	public ActionHandler(TextField firstTf, TextField secondTf) {
-		this.firstTf = firstTf;
-		this.SecondTf = secondTf;
-		
-					
+	public ActionHandler(MyFrame myFrame) {
+		this.mf = myFrame;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		System.out.println(e.getActionCommand());
+		try {
+				
+		String a = mf.firstTf.getText();
+		String b = mf.secondTf.getText();
 		
-		if (e.getActionCommand().equalsIgnoreCase("Addtion")){
-			String a = this.firstTf.getText();
-			String b = this.SecondTf.getText();
+		float firstNo = Float.parseFloat(a);
+		float SecondNo = Float.parseFloat(b);
+		
 			
-			float firstNo = Float.parseFloat(a);
-			float SecondNo = Float.parseFloat(b);
-			System.out.println(firstNo);
-			System.out.println(SecondNo);
+		
+		
+				
+		if (e.getActionCommand().equalsIgnoreCase("Addtion")){
 			
 			float result = firstNo + SecondNo;
-			System.out.println(result);
-			
-			
-			
+			mf.lbl.setText("Answer is:  " + result);
+		
 			
 		}else if (e.getActionCommand().equalsIgnoreCase("Subtraction")) {
 			
-			String a = this.firstTf.getText();
-			String b = this.SecondTf.getText();
-			
-			float firstNo = Float.parseFloat(a);
-			float SecondNo = Float.parseFloat(b);
-			System.out.println(firstNo);
-			System.out.println(SecondNo);
-			
 			float  result = firstNo - SecondNo;
 			System.out.println(result);
-			
-			
+			mf.lbl.setText("Answer is:  " + result);
 			
 		}else if (e.getActionCommand().equalsIgnoreCase("Multiplication")){
 			
-			String a = this.firstTf.getText();
-			String b = this.SecondTf.getText();
-			
-			float firstNo = Float.parseFloat(a);
-			float SecondNo = Float.parseFloat(b);
-			System.out.println(firstNo);
-			System.out.println(SecondNo);
-			
 			float result = firstNo * SecondNo;
 			System.out.println(result);
-			
-			
-			
+			mf.lbl.setText("Answer is:  " + result);
 			
 		}else if (e.getActionCommand().equalsIgnoreCase("Division")){
-			
-			String a = this.firstTf.getText();
-			String b = this.SecondTf.getText();
-			
-			float firstNo = Float.parseFloat(a);
-			float SecondNo = Float.parseFloat(b);
-			System.out.println(firstNo);
-			System.out.println(SecondNo);
-			
+					
 			float result = firstNo / SecondNo;
 			System.out.println(result);
-			
+			mf.lbl.setText("Answer is:  " + result);
 			
 		}
+}
+		
+		catch (Exception ex){
+			mf.lbl.setText("Please input the number only");
+		}
+	}
 		
 
-	}
-
 }
+	
