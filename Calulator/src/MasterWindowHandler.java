@@ -14,7 +14,7 @@ public class MasterWindowHandler implements WindowListener,MouseListener,MouseMo
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		System.out.println("X = "+ e.getX() + " Y = " + e.getY());
+		//System.out.println("X = "+ e.getX() + " Y = " + e.getY());
 		
 	}
 

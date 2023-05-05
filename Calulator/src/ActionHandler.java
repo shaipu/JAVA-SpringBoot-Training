@@ -21,10 +21,7 @@ public class ActionHandler implements ActionListener {
 		float firstNo = Float.parseFloat(a);
 		float SecondNo = Float.parseFloat(b);
 		
-			
-		
-		
-				
+						
 		if (e.getActionCommand().equalsIgnoreCase("Addtion")){
 			
 			float result = firstNo + SecondNo;
@@ -53,8 +50,17 @@ public class ActionHandler implements ActionListener {
 }
 		
 		catch (Exception ex){
+			if(ex.getMessage() == "empty String" ) {
+				mf.lbl.setText("Either or both the input box(es) is empty");
+				System.out.println(ex);	
+				
+			}
+			else {
 			mf.lbl.setText("Please input the number only");
+			System.out.println(ex.getMessage());
+			}
 		}
+		
 	}
 		
 
