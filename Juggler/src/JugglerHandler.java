@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,39 +11,36 @@ public class JugglerHandler implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		
-		
+       	
+    	int c = Integer.parseInt(jf.getThirdTf().getText());
+		int b = Integer.parseInt(jf.getSecondTf().getText());
+		int a = Integer.parseInt(jf.getFirstTf().getText());
+	
         if(e.getActionCommand().equalsIgnoreCase("Clock-Wise")) {
         	
-        	       	
-        	int c = Integer.parseInt(jf.getThirdTf().getText());
-    		int b = Integer.parseInt(jf.getSecondTf().getText());
-    		int a = Integer.parseInt(jf.getFirstTf().getText());
-    					
-        	int x = c+1;
-        	c = b;
-			jf.getThirdTf().setText("" + c);
-			b = a;
-			jf.getSecondTf().setText("" + b);
-		   	a = x;
-			jf.getFirstTf().setText("" + a);
+        	int arry[] = {c,b,a};
+        				
+        	int x = arry[0]+1;
+        	arry[0] = arry[1];
+			jf.getThirdTf().setText("" + arry[0]);
+			arry[1] = arry[2];
+			jf.getSecondTf().setText("" + arry[1]);
+			arry[2] = x;
+			jf.getFirstTf().setText("" + arry[2]);
 			
 					
 		} else 
 		if(e.getActionCommand().equalsIgnoreCase("Anti-Clock-Wise")) {
 			
-		
-			int a = Integer.parseInt(jf.getFirstTf().getText());
-			int b = Integer.parseInt(jf.getSecondTf().getText());
-			int c = Integer.parseInt(jf.getThirdTf().getText());
+			int arry[] = {a,b,c};
 			
-			int x = a-1;
-			a = b;
-			jf.getFirstTf().setText("" + a);
-			b = c;
-			jf.getSecondTf().setText("" + b);
-			c = x;
-			jf.getThirdTf().setText("" + c);
+			int x = arry[0]-1;
+			arry[0] = arry[1];
+			jf.getFirstTf().setText("" + arry[0]);
+			arry[1] = arry[2];
+			jf.getSecondTf().setText("" + arry[1]);
+			arry[2] = x;
+			jf.getThirdTf().setText("" + arry[2]);
 		
 		}
 	
