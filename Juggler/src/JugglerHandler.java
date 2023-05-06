@@ -15,34 +15,35 @@ public class JugglerHandler implements ActionListener {
 		
         if(e.getActionCommand().equalsIgnoreCase("Clock-Wise")) {
         	
-        	String c = jf.getThirdTf().getText();
-    		String b = jf.getSecondTf().getText();
-    		String a = jf.getFirstTf().getText();
-    		
-        	String x = c;
+        	       	
+        	int c = Integer.parseInt(jf.getThirdTf().getText());
+    		int b = Integer.parseInt(jf.getSecondTf().getText());
+    		int a = Integer.parseInt(jf.getFirstTf().getText());
+    					
+        	int x = c+1;
         	c = b;
-			jf.getThirdTf().setText(c);
+			jf.getThirdTf().setText("" + c);
 			b = a;
-			jf.getSecondTf().setText(b);
+			jf.getSecondTf().setText("" + b);
 		   	a = x;
-			jf.getFirstTf().setText(a);
+			jf.getFirstTf().setText("" + a);
 			
 						
 		} else 
 		if(e.getActionCommand().equalsIgnoreCase("Anti-Clock-Wise")) {
+		
+			int a = Integer.parseInt(jf.getFirstTf().getText());
+			int b = Integer.parseInt(jf.getSecondTf().getText());
+			int c = Integer.parseInt(jf.getThirdTf().getText());
 			
-			String a = jf.getFirstTf().getText();
-			String b = jf.getSecondTf().getText();
-			String c = jf.getThirdTf().getText();
-			
-			String x = a;
+			int x = a-1;
 			a = b;
-			jf.getFirstTf().setText(a);
+			jf.getFirstTf().setText("" + a);
 			b = c;
-			jf.getSecondTf().setText(b);
+			jf.getSecondTf().setText("" + b);
 			c = x;
-			jf.getThirdTf().setText(c);
-					
+			jf.getThirdTf().setText("" + c);
+		
 		}
 	
 	}
