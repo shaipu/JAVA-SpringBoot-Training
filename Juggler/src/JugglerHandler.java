@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 
 public class JugglerHandler implements ActionListener {
@@ -18,29 +20,30 @@ public class JugglerHandler implements ActionListener {
 	
         if(e.getActionCommand().equalsIgnoreCase("Clock-Wise")) {
         	
-        	int arry[] = {c,b,a};
+        	int intArray[] = {c,b,a};
+        	System.out.println(Arrays.asList(intArray));
         				
-        	int x = arry[0]+1;
-        	arry[0] = arry[1];
-			jf.getThirdTf().setText("" + arry[0]);
-			arry[1] = arry[2];
-			jf.getSecondTf().setText("" + arry[1]);
-			arry[2] = x;
-			jf.getFirstTf().setText("" + arry[2]);
+        	int x = intArray[0]+1;
+        	intArray[0] = intArray[1];
+			jf.getThirdTf().setText("" + intArray[0]);
+			intArray[1] = intArray[2];
+			jf.getSecondTf().setText("" + intArray[1]);
+			intArray[2] = x;
+			jf.getFirstTf().setText("" + intArray[2]);
 			
 					
 		} else 
 		if(e.getActionCommand().equalsIgnoreCase("Anti-Clock-Wise")) {
 			
-			int arry[] = {a,b,c};
+			int intArray[] = {a,b,c};
 			
-			int x = arry[0]-1;
-			arry[0] = arry[1];
-			jf.getFirstTf().setText("" + arry[0]);
-			arry[1] = arry[2];
-			jf.getSecondTf().setText("" + arry[1]);
-			arry[2] = x;
-			jf.getThirdTf().setText("" + arry[2]);
+			int x = intArray[0]-1;
+			intArray[0] = intArray[1];
+			jf.getFirstTf().setText("" + intArray[0]);
+			intArray[1] = intArray[2];
+			jf.getSecondTf().setText("" + intArray[1]);
+			intArray[2] = x;
+			jf.getThirdTf().setText("" + intArray[2]);
 		
 		}
 	
