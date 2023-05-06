@@ -21,7 +21,7 @@ public class JugglerHandler implements ActionListener {
         if(e.getActionCommand().equalsIgnoreCase("Clock-Wise")) {
         	
         	int intArray[] = {c,b,a};
-        	System.out.println(Arrays.asList(intArray));
+        	System.out.println(Arrays.toString(intArray));
         				
         	int x = intArray[0]+1;
         	intArray[0] = intArray[1];
@@ -36,6 +36,7 @@ public class JugglerHandler implements ActionListener {
 		if(e.getActionCommand().equalsIgnoreCase("Anti-Clock-Wise")) {
 			
 			int intArray[] = {a,b,c};
+			System.out.println(Arrays.toString(intArray));
 			
 			int x = intArray[0]-1;
 			intArray[0] = intArray[1];
