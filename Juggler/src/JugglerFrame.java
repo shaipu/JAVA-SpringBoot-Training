@@ -10,6 +10,8 @@ public class JugglerFrame extends Frame{
 	private TextField firstTf;
 	private TextField secondTf;
 	private TextField thirdTf;
+	private Button ClockWisewBt;
+	private Button AntiClockWisewBt;
 	
 
 	public JugglerFrame(boolean b, String title, int i, int j, int k, int l) {
@@ -52,23 +54,40 @@ public class JugglerFrame extends Frame{
 		
 		// set buttons 
 		
-		Button ClockWisewBt = new Button("Clock-Wise");
+		ClockWisewBt = new Button("Clock-Wise");
 		ClockWisewBt.setBounds(120,250,100,30);
 		ClockWisewBt.setBackground(Color.orange);
 		add(ClockWisewBt);
 		
+		
 		ClockWisewBt.addActionListener(new JugglerHandler(this));
 		
-
-		
-		
-		
-		Button AntiClockWisewBt = new Button("Anti-Clock-Wise");
+		AntiClockWisewBt = new Button("Anti-Clock-Wise");
 		AntiClockWisewBt.setBounds(300,250,100,30);
 		AntiClockWisewBt.setBackground(Color.orange);
 		add(AntiClockWisewBt);
 		
 		AntiClockWisewBt.addActionListener(new JugglerHandler(this));	
+	}
+
+
+	public Button getClockWisewBt() {
+		return ClockWisewBt;
+	}
+
+
+	public void setClockWisewBt(Button clockWisewBt) {
+		ClockWisewBt = clockWisewBt;
+	}
+
+
+	public Button getAntiClockWisewBt() {
+		return AntiClockWisewBt;
+	}
+
+
+	public void setAntiClockWisewBt(Button antiClockWisewBt) {
+		AntiClockWisewBt = antiClockWisewBt;
 	}
 
 

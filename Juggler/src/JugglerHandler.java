@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,9 +29,10 @@ public class JugglerHandler implements ActionListener {
 		   	a = x;
 			jf.getFirstTf().setText("" + a);
 			
-						
+					
 		} else 
 		if(e.getActionCommand().equalsIgnoreCase("Anti-Clock-Wise")) {
+			
 		
 			int a = Integer.parseInt(jf.getFirstTf().getText());
 			int b = Integer.parseInt(jf.getSecondTf().getText());
