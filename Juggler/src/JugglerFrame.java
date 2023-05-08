@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Frame;
+import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -12,6 +13,7 @@ public class JugglerFrame extends Frame{
 	private TextField thirdTf;
 	private Button ClockWisewBt;
 	private Button AntiClockWisewBt;
+	private Label lbl;
 	
 
 	public JugglerFrame(boolean b, String title, int i, int j, int k, int l) {
@@ -42,6 +44,11 @@ public class JugglerFrame extends Frame{
 		thirdTf.setBounds(intialX+190,intialY+100,80,30);
 		thirdTf.setBackground(Color.cyan);
 		add(thirdTf);
+		
+		lbl = new Label();
+		lbl.setBounds(intialX, intialY+50, 450,30);
+		lbl.setBackground(Color.yellow);
+		add(lbl);
 		
 		//close Juggler window
 		this.addWindowListener(new WindowAdapter() {
@@ -118,6 +125,16 @@ public class JugglerFrame extends Frame{
 
 	public void setThirdTf(TextField thirdTf) {
 		this.thirdTf = thirdTf;
+	}
+
+
+	public Label getLbl() {
+		return lbl;
+	}
+
+
+	public void setLbl(Label lbl) {
+		this.lbl = lbl;
 	}
 
 	

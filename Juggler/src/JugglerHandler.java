@@ -13,6 +13,8 @@ public class JugglerHandler implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		
+		try {
        	
     	int c = Integer.parseInt(jf.getThirdTf().getText());
 		int b = Integer.parseInt(jf.getSecondTf().getText());
@@ -49,5 +51,19 @@ public class JugglerHandler implements ActionListener {
 		}
 	
 	}
+		catch (Exception ex){
+			if(ex.getMessage() == null ) {
+				jf.getLbl().setText(null);;
+				System.out.println(ex.getMessage());	
+				
+			}
+			else {
+			jf.getLbl().setText("Please input the number only");
+			System.out.println(ex.getMessage());
+			}
+		}
+		
 
+	}
 }
+	
