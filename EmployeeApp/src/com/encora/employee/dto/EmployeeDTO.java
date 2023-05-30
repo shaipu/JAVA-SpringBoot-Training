@@ -1,7 +1,7 @@
 package com.encora.employee.dto;
 
 public class EmployeeDTO {
-	
+
 	private int employeeID;
 	private String EmployeeName;
 	private String gender;
@@ -34,28 +34,51 @@ public class EmployeeDTO {
 	public boolean isPf() {
 		return pf;
 	}
+	
 	public void setPf(boolean pf) {
 		this.pf = pf;
+	}
+	
+	public Boolean getPf() {
+		return pf;
 	}
 	public boolean isGraduity() {
 		return graduity;
 	}
+	
+	public Boolean getGraduity() {
+		return graduity;
+	}
+	
 	public void setGraduity(boolean graduity) {
 		this.graduity = graduity;
 	}
 	public boolean isMealCard() {
 		return mealCard;
 	}
+	
+	public Boolean getMealCard() {
+		return mealCard;
+	}
+	
 	public void setMealCard(boolean mealCard) {
 		this.mealCard = mealCard;
 	}
 	public boolean isNps() {
 		return nps;
 	}
+	
+	public Boolean getNps() {
+		return nps;
+	}
 	public void setNps(boolean nps) {
 		this.nps = nps;
 	}
 	public boolean isMediClaim() {
+		return mediClaim;
+	}
+	
+	public Boolean getMediClaim() {
 		return mediClaim;
 	}
 	public void setMediClaim(boolean mediClaim) {
@@ -81,10 +104,28 @@ public class EmployeeDTO {
 	}
 	@Override
 	public String toString() {
-		return "EmployeeDTO [employeeID=" + employeeID + ", EmployeeName=" + EmployeeName + ", gender=" + gender
-				+ ", pf=" + pf + ", graduity=" + graduity + ", mealCard=" + mealCard + ", nps=" + nps + ", mediClaim="
-				+ mediClaim + ", officeLocation=" + officeLocation + ", employeeAddress=" + employeeAddress
-				+ ", employeeSalary=" + employeeSalary + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("EmployeeDTO [employeeID=");
+		builder.append(employeeID);
+		builder.append(", employeeName=");
+		builder.append(EmployeeName);
+		builder.append(", gender=");
+		builder.append(gender);
+		builder.append(", pf=");
+		builder.append(pf);
+		builder.append(", graduity=");
+		builder.append(graduity);
+		builder.append(", mealCard=");
+		builder.append(mealCard);
+		builder.append(", nps=");
+		builder.append(nps);
+		builder.append(", medilcaim=");
+		builder.append(mediClaim);
+		builder.append(", officeLocation=");
+		builder.append(officeLocation);
+		builder.append("]");
+		return builder.toString();
 	}
+
 	
 }
