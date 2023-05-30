@@ -97,18 +97,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 	}
 
-	@SuppressWarnings("finally")
+
 	public EmployeeDTO deleteEmployee(EmployeeDTO employeeDTO) {
 		EmployeeDTO dto = new EmployeeDTO();
-		
+
 		try {
 			DBHelper helper = DBHelper.getInstance();
-			
+
 			con = helper.getConnection();
 			PreparedStatement ps = con.prepareStatement("DELETE FROM `employee-db`.employee_info WHERE employee_id=?;");
 			ps.setInt(1, employeeDTO.getEmployeeID());
 			ps.execute();
-
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -122,7 +121,56 @@ public class EmployeeServiceImpl implements EmployeeService {
 			return dto;
 		}
 
-		
+	}
+
+	public EmployeeDTO findFirstEmployee() {
+		EmployeeDTO dto = new EmployeeDTO();
+		DBHelper helper = DBHelper.getInstance();
+		con = helper.getConnection();
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from `employee-db`.employee_info",
+					ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			ResultSet rs = ps.executeQuery();
+			if (rs.first()) {
+				copyFromDatabaseToEmployeeDTO(rs, dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return dto;
+		}
+
+	}
+
+	public EmployeeDTO findLastEmployee() {
+		EmployeeDTO dto = new EmployeeDTO();
+		try {
+			DBHelper helper = DBHelper.getInstance();
+			con = helper.getConnection();
+
+			PreparedStatement ps = con.prepareStatement("select * from `employee-db`.employee_info",
+					ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			ResultSet rs = ps.executeQuery();
+			if (rs.last()) {
+				copyFromDatabaseToEmployeeDTO(rs, dto);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return dto;
+		}
+
 	}
 
 	private EmployeeDTO copyFromDatabaseToEmployeeDTO(ResultSet rs, EmployeeDTO dto) throws SQLException {
@@ -153,18 +201,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 		ps.setString(9, employeeDTO.getEmployeeAddress());
 		ps.setString(10, employeeDTO.getEmployeeSalary());
 		return ps;
-	}
-
-	@Override
-	public EmployeeDTO findFirstEmployee() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public EmployeeDTO findLastEmployee() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

@@ -9,7 +9,7 @@ public interface EmployeeService {
 	public void updateEmployee(EmployeeDTO employeeDTO);
 
 	public EmployeeDTO searchEmployee(EmployeeDTO employeeDTO);
-	
+
 	public EmployeeDTO deleteEmployee(EmployeeDTO employeeDTO);
 
 	public EmployeeDTO findFirstEmployee();

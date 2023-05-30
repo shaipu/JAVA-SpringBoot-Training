@@ -48,7 +48,8 @@ public class EmployeeHandler implements ActionListener {
 			break;
 		}
 		case "first": {
-
+			dto = employeeService.findFirstEmployee();
+			refreshEmployeeForm(dto);
 			break;
 
 		}
@@ -64,6 +65,8 @@ public class EmployeeHandler implements ActionListener {
 		}
 
 		case "last": {
+			dto = employeeService.findLastEmployee();
+			refreshEmployeeForm(dto);
 
 			break;
 
@@ -76,7 +79,7 @@ public class EmployeeHandler implements ActionListener {
 	}
 
 	private void refreshEmployeeForm(EmployeeDTO dto) {
-		ef.getEmployeeIdTxt().setText(""+dto.getEmployeeID());
+		ef.getEmployeeIdTxt().setText("" + dto.getEmployeeID());
 		ef.getEmployeeNameTxt().setText(dto.getEmployeeName());
 		ef.getPfOption().setState(dto.getPf());
 		ef.getMealCardOption().setState(dto.getMealCard());
@@ -86,11 +89,8 @@ public class EmployeeHandler implements ActionListener {
 		ef.getOfficeLocationList().select(dto.getOfficeLocation());
 		ef.getEmployeeAddressTxt().setText(dto.getEmployeeAddress());
 		ef.getEmployeeSalaryTxt().setText(dto.getEmployeeSalary());
-		
 
 	}
-
-	
 
 	private EmployeeDTO getEmployeeData(EmployeeFrame ef) {
 
